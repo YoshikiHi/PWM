@@ -14,14 +14,17 @@ architecture RTL of PWMGEN is
 
 signal sawtooth : integer;
 
+begin
+
 process (CLK100MHz) begin
   if rising_edge(CLK100MHz) then
     if RST = '1' then
-	  sawtooth = 0;
+	  sawtooth <= 0;
 	 else 
-	  if sawthooth then
-     
-     else	  
+	  if sawtooth = 49999 then
+       sawtooth <= 0;
+     else
+	    sawtooth <= sawtooth+1;
 	  end if;
 	 end if;
   end if;
