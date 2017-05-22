@@ -28,7 +28,7 @@ signal pwm_in		  : STD_LOGIC;
 
 begin 
 
-threshould_in <= to_integer(unsigned(SW(2 downto 0))) * 7143;
+threshold_in <= to_integer(unsigned(SW(2 downto 0))) * 7143;
 
 SubUnit: PWMGEN
 port map(RST,CLK100MHZ,threshold_in,pwm_in);
